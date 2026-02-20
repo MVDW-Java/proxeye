@@ -8,3 +8,9 @@ services:
             - GELBOORU_USER_ID=${GELBOORU_USER_ID}
             - PROXEYE_PORT=${PROXEYE_PORT:-8080}
         restart: unless-stopped
+        networks:
+            - proxeye-network
+
+networks:
+    proxeye-network:
+        driver: bridge
