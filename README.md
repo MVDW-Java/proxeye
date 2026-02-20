@@ -1,9 +1,5 @@
 # proxeye
 
-proxy to bypass gelbooru new referer header requirement
-
-## Overview
-
 Proxeye is a lightweight HTTP proxy server designed to bypass Gelbooru's new referer header requirement for accessing media files. It fetches post metadata from the Gelbooru API and streams the media file.
 
 ## Quick Start
