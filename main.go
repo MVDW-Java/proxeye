@@ -37,11 +37,13 @@ func main() {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) {
-	postID := strings.TrimPrefix(r.URL.Path, "/")
-	if postID == "" {
+	path := strings.TrimPrefix(r.URL.Path, "/")
+	if path == "" {
 		http.Error(w, "Missing post ID", http.StatusBadRequest)
 		return
 	}
+	parts := strings.Split(path, ".")
+	postID := parts[0]
 
 	apiKey := os.Getenv("GELBOORU_API_KEY")
 	userID := os.Getenv("GELBOORU_USER_ID")
